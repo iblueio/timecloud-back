@@ -1,0 +1,20 @@
+{
+  "name": "timecloud-back",
+  "version": "1.0.0",
+  "description": "A distributed scheduling system based on Node.js (back)",
+  "main": "index.js",
+  "repository": "https://github.com/iblueio/timecloud-back.git",
+  "author": "Bingmang <ustbbingmang@foxmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "fs-extra": "^5.0.0",
+    "lodash": "^4.17.5",
+    "promise-retry": "^1.1.1",
+    "timecloud-core": "^0.0.1"
+  },
+  "devDependencies": {
+    "mocha": "^5.1.1",
+    "nyc": "^11.7.1"
+  }
+}

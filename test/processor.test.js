@@ -22,10 +22,6 @@ describe('Processor', () => {
     timeout: 10000
   }, logger)
 
-  after(() => {
-    process.exit(0)
-  })
-
   it('run and abort', async () => {
     processor.run()
     await sleep(1000)

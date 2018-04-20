@@ -1,0 +1,10 @@
+{
+  "jobs": [
+    {
+      "name": "start",
+      "script": "npm start",
+      "schedule": "*/3 * * * * *",
+      "retries": 0
+    }
+  ]
+}

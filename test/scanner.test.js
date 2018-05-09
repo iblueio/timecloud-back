@@ -50,7 +50,7 @@ describe('Scanner', () => {
     assert(jobConfigs['normal.ENV=prod@1.0.0-start'])
   })
 
-  it('createProcessors', async () => {
+  it('createProcessors and clearProcessors', async () => {
     let core
     await new Promise(res => {
       core = new Core({ db: { address: 'mongodb://localhost/iblueio' } }, res)
@@ -59,7 +59,19 @@ describe('Scanner', () => {
     await scanner.readConfigs()
     let createdJobs = await scanner.createProcessors(core)
     assert(createdJobs[0].attrs.name.includes('normal'))
+    await scanner.clearProcessors()
+    assert(!Object.keys(scanner._processorMap).length)
   })
 
+  it('scanAndCreateProcessors', async () => {
+    let core
+    await new Promise(res => {
+      core = new Core({ db: { address: 'mongodb://localhost/iblueio' } }, res)
+    })
+    let createdJobs = await scanner.scanAndCreateProcessors(core)
+    assert(createdJobs[0].attrs.name.includes('normal'))
+    await scanner.clearProcessors()
+    assert(!Object.keys(scanner._processorMap).length)
+  })
 
 })

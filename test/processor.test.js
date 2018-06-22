@@ -8,7 +8,7 @@ const assert = require('assert')
 const logger = {
   info:  console.log,
   error: console.log,
-  debug: console.log,
+  trace: console.log,
   fatal: console.log,
 }
 
